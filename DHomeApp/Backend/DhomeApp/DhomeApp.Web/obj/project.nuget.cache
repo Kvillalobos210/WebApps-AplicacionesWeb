@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q3ZKPItn6zS2V0sGhvBU9jWc/g/2fFYlJxRgtQwssRICrUxnoovX7sdMMti5CVGUIwsAMiySEVpMjF6xsSa3hw==",
+  "dgSpecHash": "Dqe0KOM5BS4TRX22FDMztXSt/rF+eEzm0JS1lf0F110/ICWIDXYKLQNUMm6Sr7hnh9nnC0NPMMGxKiRIQbSZuw==",
   "success": true,
-  "projectFilePath": "C:\\DhomeApp\\Backend\\DhomeApp\\DhomeApp.Web\\DhomeApp.Web.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\DHomeWeb\\WebApps-AplicacionesWeb\\DHomeApp\\Backend\\DhomeApp\\DhomeApp.Web\\DhomeApp.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
