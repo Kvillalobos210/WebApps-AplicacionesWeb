@@ -32,6 +32,11 @@ namespace DhomeApp.Web
                 c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("DemoEmployee",
+                    builder => builder.WithOrigins("*").WithHeaders("*").WithMethods("*"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +49,8 @@ namespace DhomeApp.Web
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "DhomeApp.Web v1"));
             }
+
+            app.UseCors("DemoEmployee");
 
             app.UseHttpsRedirection();
 
