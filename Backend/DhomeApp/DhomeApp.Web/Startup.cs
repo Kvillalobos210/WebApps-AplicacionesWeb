@@ -35,7 +35,7 @@ namespace DhomeApp.Web
 
             services.AddCors(options =>
             {
-                options.AddPolicy("DemoEmployee",
+                options.AddPolicy("DemoCustomers",
                     builder => builder.WithOrigins("*").WithHeaders("*").WithMethods("*"));
             });
         }
@@ -50,7 +50,7 @@ namespace DhomeApp.Web
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "DhomeApp.Web v1"));
             }
-            app.UseCors("DemoEmployee");
+            app.UseCors("DemoCustomers");
 
             app.UseHttpsRedirection();
 

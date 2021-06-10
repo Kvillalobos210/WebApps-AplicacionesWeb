@@ -33,6 +33,9 @@
                                     <v-col cols="12" sm="12" md="12">
                                         <v-text-field v-model="Dni" label="Dni"></v-text-field>
                                     </v-col>
+                                    <v-col cols="12" sm="12" md="12">
+                                        <v-text-field v-model="DistrictId" label="DistrictId"></v-text-field>
+                                    </v-col>
                                 </v-row>
                             </v-container>
                         </v-card-text>
@@ -76,6 +79,7 @@
                 <td>{{ item.Firstname }}</td>
                 <td>{{ item.Lastname }}</td>
                 <td>{{ item.Dni }}</td>
+                <td>{{ item.DistrictId }}</td>
                 <td>
                     <div v-if="item.condition">
                         <span class="blue--text">Activo</span>
@@ -103,171 +107,183 @@
 </template>
 
 <script>
-//Usaremos el axios para que llame a los métodos del API
-    import axios from 'axios'
 
-    export default {
-        data: () => ({
-            //Aquí ponemos las variables que están en los v-model
-            search:'',
-            id:'', //Para eliminar y actualizar, necesitamos el id
-            Firstname:'',
-            Lastname:'',
-            Dni:'',
-            dialog: false, //Le pondremos que será falso por defecto
-            editedIndex: -1,//Identificar si lo que tengo es una nueva categoría, o una para editar
-            customers: [], //Para la lista de Categories
-            headers: [ //para poner los nombres que estarán en la cabecera
-                {text: 'Firstname', value: 'Firstname', sortable: true},
-                {text: 'Lastname', value: 'Lastname', sortable: false},
-                {text: 'Dni', value: 'Dni', sortable: false},
-                {text: 'Condition', value: 'condition', sortable: false},
-                {text: 'Actions', value:'action', sortable: false}
-            ],
-            valid: 0, //Nos sirve de bandera
-            validMessage: [], //Verá si hay parámetros
-            adModel: 0,
-            adAction: 0,
-            adName: '',
-            adId: ''
-        }),
-        computed: { //Para editar el título del dialog, es propio del vuetify
-            formTitle(){
-                return this.editedIndex === -1 ? 'New Customer': 'Edit Customer'
-            },
+import axios from 'axios'
+
+export default {
+    data: () => ({
+        dialog: false,
+        headers: [
+            { text: 'Firstname', value: 'Firstname', sortable: true },
+            { text: 'Lastname', value: 'Lastname', sortable: false },
+            { text: 'Dni', value: 'Dni', sortable: false },
+            { text: 'DistrictId', value: 'DistrictId', sortable: false },
+            { text: 'Condition', value: 'condition', sortable: false },
+            { text: 'Actions', value: 'action', sortable: false }
+        ],
+        search: '',
+        id: '',
+        Firstname: '',
+        Lastname: '',
+        Dni: '',
+        DistrictId: '',
+        customers: [],
+        editedIndex: -1,
+        valid: 0,
+        validMessage: [],
+        adModel: 0,
+        adAction: 0,
+        adName: '',
+        adId: ''
+    }),
+    computed: {
+        formTitle() {
+            return this.editedIndex === -1 ? 'New Customer' : 'Edit Customer';
+        }
+    },
+    watch: {
+        dialog (val){
+            val || this.close()
+        }
+    },
+    created() {
+        this.listCustomers();
+    },
+    methods: {
+        listCustomers() {
+            let me = this;
+            axios.get('api/Customers')
+            .then(function(response){
+                console.log(response)
+                me.customers = response.data;
+            }).catch(function(error){
+                console.log(error);
+            });
         },
-        watch: {
-            dialog (val){
-                val || this.close()
-            },
+        
+        editItem(item) {
+            this.id = item.CustomerId;
+            this.Firstname = item.Firstname;
+            this.Lastname = item.Lastname;
+            this.Dni = item.Dni;
+            this.DistrictId = item.DistrictId;
+            this.editedIndex = 1;
+            this.dialog = true;
         },
 
-        created(){
-            this.list();
+        deleteItem(item) {
+            let me = this;
+                
+            if(confirm('¿Estas seguro que quiere eliminar este Category?'))
+                axios.delete('api/Customers/' + item.CustomerId,{
+                'id': item.CustomerId
+            }).then(function(response){
+                console.log(item.id);
+                me.close();
+                me.listCustomers();
+                me.clean();
+            }).catch(function(error){
+                console.log(error);
+            })
         },
-        methods: {
-                list(){ //Para listar cuando se guarde uno nuevo
-                    let me = this;
-                    axios.get('api/Customers') //Primero llama a los datos
-                    .then(function(response){ //Hace una función responsive
-                        me.customers = response.data;
-                    }).catch(function(error){ //Por si hay un error
-                        console.log(error);
-                    });
-                },
-                editItem(item){
-                    this.id = item.CustomerId; //Sebe estar con el mismo nombre (id) que en el Backend
-                    this.Firstname = item.Firstname;
-                    this.Lastname = item.Lastname;
-                    this.editedIndex = 1;
-                    this.dialog = true; //se habilita el cuadro de dialogo
-                },
-                deleteItem (item) {
-                    let me = this;
-                    if (confirm('¿Estás seguro que quiere eliminar este Customer?'))
-                    axios.delete('api/Customers/'+item.CustomerId,{
-                                'id': item.CustomerId
-                    }).then(function(response){
-                        console.log(item.id);
-                        me.close();
-                        me.list();
-                        me.clean();
-                    }).catch(function(error){
-                        console.log(error);
-                    });
-                },
-                //Aquí ponemos las variables que están en @click
-                close(){
-                    this.dialog = false
-                },
-                //Para limpiar lo que llenamos al ingresar datos nuevos
-                clean(){
-                    this.id="";
-                    this.Firstname="";
-                    this.Lastname="";
-                    this.Dni="";
-                    this.editedIndex=-1;
-                },
-                save(){
-                    if (this.isValidName()) {
-                        return;
-                    }
-                    let me= this;
-                    if (this.editedIndex > -1) { //Editar Category
-                        //Put = Actualizar
-                        axios.put('api/Customers/PutCustomer', {
-                            //Ponemos los campos que tiene (muestra) PutCategoryModel
-                            'customerId': me.id,
-                            'Firstname': me.Firstname,
-                            'Lastname': me.Lastname,
-                            'Dni': me.Dni
-                        }).then(function(response){ //Esto se hace después de que se haga lo de arriba
-                        me.close(); //Acá cierra el diálogo cuando le da a guardar
-                        me.list(); //Para listar cuando se guarde uno nuevo
-                        me.clean();
-                        }).catch(function(error){
-                            console.log(error);
-                        });
-                    } else{ 
-                    //Post = Agregar
-                        axios.post('api/Customers',{ //Sin el primer / porque de donde lo llamaremos lo pondrá
-                                    'Firstname': me.Firstname,
-                                    'Lastname': me.Lastname,
-                                    'Dni': me.Dni
-                        }).then(function(response){ //Esto se hace después de que se haga lo de arriba
-                            me.close(); //Acá cierra el diálogo cuando le da a guardar
-                            me.list(); //Para listar cuando se guarde uno nuevo
-                            me.clean();
-                        }).catch(function(error){
-                            console.log(error);
-                        });
-                    }
-                },
-
-                isValidName(){
-                    this.valid = 0;
-                    this.validMessage = [];
-
-                    if (this.Firstname.length < 3 || this.Firstname.length > 50) {
-                        this.validMessage.push("El Name debe tener más de 3 caractéres y menos de 50 caractéres");
-                    }
-                    if (this.validMessage.length) {
-                        this.valid = 1;
-                    }
-                    return this.valid;
-                },
-
-                activeDesactiveShow(action, item){
-                    this.adModel = 1; //Le ponemos 1 por defecto
-                    this.adName = item.Firstname;
-                    this.adId = item.customerId;
-
-                    if (action == 1) {
-                        this.adAction=1;
-                    } else if (action ==2) {
-                        this.adAction=2;
-                    }else{
-                        this.adModel=0;
-                    }
-                },
-                activeDesactiveClose(){
-                    this.adModel=0;
-                },
-
-                activeDesactive(conditional){
-                    let me = this;
-                    //AXIOS para llamar a un servicio
-                    axios.put('api/Customers/UpdateCondition/'+this.adId+'/'+conditional, {})
-                    .then(function (response) {
-                        me.adModel=0;
-                        me.adAction=0;
-                        me.adName="";
-                        me.adId="";
-                        me.list();
-                    }).catch(function(error){
-                        console.log(error);
-                    })
-                },
+        
+        close() {
+            this.dialog = false;
         },
+    
+        clean() {
+            this.id = "";
+            this.Firstname = "";
+            this.Lastname = "";
+            this.Dni = "";
+            this.DistrictId = "";
+            this.editedIndex = -1;
+        },
+    
+        save() {
+            if(this.isValidName()) {
+                return;
+            }
+
+            let me = this;
+            
+            if(this.editedIndex > -1) { //Editar Category
+                axios.put('api/Customers/PutCustomer',{
+                    'CustomerId': me.id,
+                    'Firstname': me.Firstname,
+                    'Lastname': me.Lastname,
+                    'Dni': me.Dni,
+                    'DistrictId': me.DistrictId
+                }).then(function(response){
+                  me.close();
+                  me.listCustomers();
+                  me.clean();
+                }).catch(function(error){
+                  console.log(error);
+                });
+            }
+            else{
+                axios.post('api/Customer',{ // Nuevo Category
+                    'Firstname': me.Firstname,
+                    'Lastname': me.Lastname,
+                    'Dni': me.Dni,
+                    'District': me.DistrictId
+                }).then(function(response){
+                  me.close();
+                  me.listCustomers();
+                  me.clean();
+                }).catch(function(error){
+                  console.log(error);
+                });
+            }
+        },
+        isValidName() {
+            this.valid = 0;
+            this.validMessage = [];
+
+            if (this.Firstname.length < 3 || this.Firstname.length > 50) {
+                this.validMessage.push("El Name debe tener mas de 3 caracteres y menos de 50 caracteres");
+            }
+
+            if (this.validMessage.length) {
+                this.valid = 1;
+            }
+            return this.valid;
+        },
+        activeDeactiveShow(action, item) {
+            this.adModel = 1;
+            this.adName = item.name;
+            this.adId = item.categoryId;
+
+            if(action == 1) {
+                this.adAction = 1;
+            }
+            else if(action == 2) {
+                this.adAction = 2;
+            }
+            else {
+                this.adModel = 0;
+            }
+        },
+        activeDeactiveClose() {
+            this.adModel = 0;
+        },
+        activeDeactive(conditional) {
+            let me = this;
+
+            axios.put('api/Categories/UpdateCondition/' + this.adId + '/' + conditional, {})
+            .then(function(response){
+                me.adModel = 0;
+                me.adAction = 0;
+                me.adName = "";
+                me.adId = "";
+                me.listCategories();
+            }).catch(function(error) {
+                console.log(error);
+            });
+        },
+        
     }
+}
 </script>
+
