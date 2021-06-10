@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Customers from '../components/Customers.vue'
+import Employees from '../components/Employees.vue'
 
 
 Vue.use(VueRouter)
@@ -10,6 +12,18 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/customers',
+    name: 'customers', //esto va en el list-components-item
+    component: Customers //Es igual al componente que hemos puesto (Category.vue)
+    //De aquí nos vamos a App.vue
+  },
+  {
+    path: '/employees',
+    name: 'employees', //esto va en el list-components-item
+    component: Employees //Es igual al componente que hemos puesto (Category.vue)
+    //De aquí nos vamos a App.vue
   },
   {
     path: '/about',
