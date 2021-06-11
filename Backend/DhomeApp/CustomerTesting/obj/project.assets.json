@@ -4599,11 +4599,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\DhomeAppWeb\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\CustomerTesting.csproj",
+      "projectUniqueName": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\CustomerTesting.csproj",
       "projectName": "CustomerTesting",
-      "projectPath": "C:\\Users\\User\\Documents\\DhomeAppWeb\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\CustomerTesting.csproj",
+      "projectPath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\CustomerTesting.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\DhomeAppWeb\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\obj\\",
+      "outputPath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4623,8 +4623,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Documents\\DhomeAppWeb\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj": {
-              "projectPath": "C:\\Users\\User\\Documents\\DhomeAppWeb\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj"
+            "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj": {
+              "projectPath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj"
             }
           }
         }

@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar 
     color="blue-grey darken-1"
-    app>
+    >
         <v-app-bar-nav-icon @click="drawer = !drawer">
        
         </v-app-bar-nav-icon>
@@ -98,18 +98,26 @@
 
     </v-navigation-drawer>
     <!--Para ver todo el contenido en el conted  el router lo trae-->
-    <v-content>
-      <router-view/>
-   
-     </v-content>
+    <v-main>
+         <v-container class="fill-height" fluid>
+        <v-slide-x-transition mode="out-in">
+          <router-view />
+        </v-slide-x-transition>
+      </v-container>
+    </v-main>
    
   </v-app>
 </template>
 
 
 <script>
+import HelloWorld from './components/HelloWorld.vue';
 export default{
+
   name: "App",
+  components : {
+   HelloWorld
+  },
   
   data(){
     return {
