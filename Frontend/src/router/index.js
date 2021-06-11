@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Customers from '../components/Customers.vue'
 import Employees from '../components/Employees.vue'
+import Cities from '../components/Cities.vue'
 
 
 Vue.use(VueRouter)
@@ -23,6 +24,12 @@ const routes = [
     path: '/employees',
     name: 'employees', //esto va en el list-components-item
     component: Employees //Es igual al componente que hemos puesto (Category.vue)
+    //De aquí nos vamos a App.vue
+  },
+  {
+    path: '/cities',
+    name: 'cities', //esto va en el list-components-item
+    component: Cities //Es igual al componente que hemos puesto (Category.vue)
     //De aquí nos vamos a App.vue
   },
   {

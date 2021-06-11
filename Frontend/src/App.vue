@@ -63,6 +63,16 @@
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+            <v-list-item :to=" { name: 'cities' } ">
+              <v-list-item-action>
+                <v-icon>grid_view</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
+                  Ciudades
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list-group>
           <v-list-group>
             <v-list-item slot="activator">
