@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZK5IJ3T3lf2+X4WKqKWLwV9bUymO7jBR1p7aQBq2UWsHKJZEKDBiSOWwL1y7TkjtgrX+kc5F217YsIYaebf5Ig==",
+  "dgSpecHash": "ruPiXg2C/+Pmleeq4SzRK1dU7TW+YQHXcPqaDSwZqJ9x/2rTAVdOetjcWzb/g9KxMX9XXmPNuT+4PsvMxVSbQw==",
   "success": true,
-  "projectFilePath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\DHomeGianella\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

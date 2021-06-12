@@ -5772,11 +5772,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\DHomeGianella\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj",
       "projectName": "DhomeApp.Data",
-      "projectPath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\DHomeGianella\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\DHomeGianella\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5796,8 +5796,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj": {
-              "projectPath": "D:\\WebApps-AW\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj"
+            "C:\\Users\\User\\Documents\\DHomeGianella\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\DHomeGianella\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj"
             }
           }
         }

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-toolbar 
-    color="blue-grey darken-1"
+    color="blue-grey darken-1" style="height:1px"
     >
         <v-app-bar-nav-icon @click="drawer = !drawer">
        
@@ -9,7 +9,6 @@
        
         <v-toolbar-title >D-Home Technical</v-toolbar-title>
          <v-spacer></v-spacer>
-
     </v-toolbar>
     <v-navigation-drawer app v-model="drawer" temporary color="amber accent-2">
       <v-layout mt-3 column align-center>
