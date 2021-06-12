@@ -13,7 +13,6 @@
           dark
           flat
         >
-
         <v-toolbar-title>Lista de distritos disponibles del Perú</v-toolbar-title>
         </v-toolbar>
         <v-dialog v-model="dialog" max-width="800px">
@@ -47,7 +46,7 @@
         </v-dialog>
         <!--<v-btn color="primary" dark class="mb-2" v-on="on">New City</v-btn>-->
       </template>
-      <template v-slot:default="{ items }">
+        <template v-slot:default="{ items }">
         <v-row>
           <v-col
             v-for="item in items"
@@ -59,12 +58,19 @@
           >
             <v-card>
               <v-card-title>
-                <h4>{{ item.districtName }} {{ item.cityid }}</h4>
+                <h4>{{ item.districtName }}</h4>
+                <td class="justify-center layout px-0">
+                    <v-icon small class="mr-2" @click="editItem(item)">edit</v-icon>
+                </td>
               </v-card-title>
               <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>Departamento: {{ item.cityId }}</h4>
+              </td>
             </v-card>
           </v-col>
         </v-row>
+
       </template>
     </v-data-iterator>
   </v-container>
@@ -79,14 +85,16 @@
             districtid: '',
             districtname:'',
             cityid: '',
+            cityname: '',
             dialog: false,
             editedIndex: -1,
             districts: [],
+            cities: [],
             headers: [
                 { text: 'DistrictName', value: 'districtname', sortable: true },
                 { text: 'CityId', value: 'cityid', sortable: true }
                 
-            ]
+            ],
         }),
         computed: {
             formTitle() {
@@ -101,6 +109,7 @@
         created() {
             this.listDistricts();
         },
+
         methods: {
             listDistricts() {
                 let me= this;
@@ -170,6 +179,7 @@
                 }
                 this.close();
             }
+
         }
     }
 </script>

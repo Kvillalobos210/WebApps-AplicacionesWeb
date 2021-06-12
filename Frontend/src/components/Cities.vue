@@ -57,8 +57,10 @@
             <v-card>
               <v-card-title>
                 <h4>{{ item.cityName }}</h4>
-              </v-card-title>
-              <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                    <v-icon small class="mr-2" @click="editItem(item)">edit</v-icon>
+              </td>
+            </v-card-title>
             </v-card>
           </v-col>
         </v-row>
