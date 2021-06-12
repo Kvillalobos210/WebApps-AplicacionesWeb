@@ -3,19 +3,19 @@
     class="elevation-1"
     :headers="headers"
     :search="search"
-    sort-by="cityname"
-    :items="cities">
+    sort-by="specialtyname"
+    :items="specialties">
         <template v-slot:top>
             <v-toolbar flat color="white">
-                <v-toolbar-title>CRUD Cities</v-toolbar-title>
+                <v-toolbar-title>Listado de especialidades</v-toolbar-title>
                 <v-divider class="mx-4" inset vertical />
                 <v-spacer></v-spacer>
-                <v-text-field label="Search City" append-icon="search" 
+                <v-text-field label="Search Specialty" append-icon="search" 
                 class="text-xs-center" v-model="search" single-line hide-details></v-text-field>
                 <v-spacer></v-spacer>
                 <v-dialog v-model="dialog" max-width="800px">
                     <template v-slot:activator="{ on }">
-                        <v-btn color="primary" dark class="mb-2" v-on="on">New City</v-btn>
+                        <v-btn color="primary" dark class="mb-2" v-on="on">New Specialty</v-btn>
                     </template>
                     <v-card>
                         <v-card-title>
@@ -26,7 +26,7 @@
                             <v-container>
                                 <v-row>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="cityname" label="Nombre de la ciudad"></v-text-field>
+                                        <v-text-field v-model="specialtyname" label="Nombre de la especialidad"></v-text-field>
                                     </v-col>
                                 </v-row>
                             </v-container>
@@ -42,7 +42,7 @@
         </template>
         <template v-slot:item="{ item }">
             <tr>
-                <td>{{ item.cityName }}</td>
+                <td>{{ item.specialtyName }}</td>
                 
                 <td class="justify-center layout px-0">
                     <v-icon small class="mr-2" @click="editItem(item)">edit</v-icon>
@@ -52,7 +52,7 @@
         </template>
 
         <template v-slot:no-data>
-            <v-btn color="primary" @click="listCities">Reset</v-btn>
+            <v-btn color="primary" @click="listSpecialties">Reset</v-btn>
         </template>
     </v-data-table>
 </template>
@@ -64,19 +64,19 @@
     export default {
         data:() => ({
             search: '',
-            cityid: '',
-            cityname:'',
+            specialtyid: '',
+            specialtyname:'',
             dialog: false,
             editedIndex: -1,
-            cities: [],
+            specialties: [],
             headers: [
-                { text: 'CityName', value: 'cityname', sortable: true },
+                { text: 'SpecialtyName', value: 'specialtyname', sortable: true },
                 
             ]
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'New City': 'Edit City';
+                return this.editedIndex === -1 ? 'New Specialty': 'Edit Specialty';
             }
         },
         watch: {
@@ -85,31 +85,31 @@
             }
         },
         created() {
-            this.listCities();
+            this.listSpecialties();
         },
         methods: {
-            listCities() {
+            listSpecialties() {
                 let me= this;
-                axios.get('api/City').then(function(response){
-                    me.cities = response.data;
+                axios.get('api/Specialty').then(function(response){
+                    me.specialties = response.data;
                 }).catch(function(error){
                     console.log(error);
                 })
             },
             editItem(item) {
-                this.cityid = item.cityId;
-                this.cityname = item.cityName;
+                this.specialtyid = item.specialtyId;
+                this.specialtyname = item.specialtyName;
                 this.editedIndex = 1;
                 this.dialog = true;
             },
             deleteItem(item) {
                 let me = this;
-                if(confirm('¿Estás seguro que quieres eliminar esta ciudad?'))
-                    axios.delete('api/City/' + item.cityId, {
-                        'cityid': item.cityId
+                if(confirm('¿Estás seguro que quieres eliminar esta especialidad?'))
+                    axios.delete('api/Specialty/' + item.specialtyId, {
+                        'specialtyid': item.specialtyId
                     }).then(function(response){
-                        console.log(item.CityId);
-                        me.listCities();
+                        console.log(item.SpecialtyId);
+                        me.listSpecialties();
                         me.close();
                         me.clean();
                     }).catch(function(error){
@@ -120,30 +120,30 @@
                 this.dialog = false;
             },
             clean() {
-                this.cityid = "";
-                this.cityname = "";
+                this.specialtyid = "";
+                this.specialtyname = "";
               
             },
             save() {
                 let me=this;
                 if(this.editedIndex >- 1) {
-                    axios.put('api/City/PutCity',{
-                        'cityid': me.cityid,
-                        'cityname': me.cityname
+                    axios.put('api/Specialty/PutSpecialty',{
+                        'specialtyid': me.specialtyid,
+                        'specialtyname': me.specialtyname
                     }).then(function(response){
                         me.close();
-                        me.listCities();
+                        me.listSpecialties();
                         me.clean();
                     }).catch(function(error) {
                         console.log(error);
                     });
                 }
                 else {
-                    axios.post('api/City', {
-                        'cityname': me.cityname
+                    axios.post('api/Specialty', {
+                        'specialtyname': me.specialtyname
                     }).then(function(response){
                         me.close();
-                        me.listCities();
+                        me.listSpecialties();
                         me.clean();
                     }).catch(function(error) {
                         console.log(error);
