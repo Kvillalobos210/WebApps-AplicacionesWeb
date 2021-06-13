@@ -29,10 +29,6 @@ namespace DhomeApp.Entity
 
         [Required(ErrorMessage = "Todo trabajador debe registrar un telefono")]
         public int Cellphone { get; set; }
-
-
-        [Required(ErrorMessage = "Todo trabajador debe registrar una cuenta")]
-        public int IdAccount { get; set; }
         
 
         //Foreing Key

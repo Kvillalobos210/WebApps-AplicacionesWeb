@@ -10,10 +10,25 @@
         <v-toolbar
           class="mb-2"
           color="indigo darken-5"
+          text @click="cities"
           dark
           flat
         >
         <v-toolbar-title>Lista de distritos disponibles del Perú</v-toolbar-title>
+        <!--Boton de listar-->
+        <v-menu transition="scroll-y-transition">
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          color="secondary"
+          class="ma-2"
+          v-bind="attrs"
+          v-on="on"
+        >
+          Ciudades disponibles
+        </v-btn>
+      </template>
+    </v-menu>
+
         </v-toolbar>
         <v-dialog v-model="dialog" max-width="800px">
                     <template v-slot:activator="{ on }">
@@ -76,7 +91,6 @@
   </v-container>
 </template>
 <script>
-
     import axios from 'axios'
     
     export default {
@@ -90,11 +104,9 @@
             editedIndex: -1,
             districts: [],
             cities: [],
-            headers: [
-                { text: 'DistrictName', value: 'districtname', sortable: true },
-                { text: 'CityId', value: 'cityid', sortable: true }
-                
-            ],
+            items: [
+                { text: 'CityName', value: 'cityname', sortable: true }
+            ]
         }),
         computed: {
             formTitle() {
@@ -180,7 +192,6 @@
                 }
                 this.close();
             }
-
         }
     }
 </script>

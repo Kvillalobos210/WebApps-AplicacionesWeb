@@ -14,6 +14,8 @@ namespace DhomeApp.Web.Models
         public string Lastname { get; set; }
 
         public string Dni { get; set; }
+        
+        public string Email { get; set; }
 
         public int Cellphone { get; set; }
 

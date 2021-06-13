@@ -44,9 +44,6 @@
                                         <v-text-field v-model="email" label="Email del cliente"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="idaccount" label="id del cliente"></v-text-field>
-                                    </v-col>
-                                    <v-col cols="12" sm="12" md="12">
                                         <v-text-field v-model="cellphone" label="Teléfono del cliente"></v-text-field>
                                     </v-col>
                                 </v-row>
@@ -109,7 +106,6 @@
             dni: '',
             districtid: '',
             email: '',
-            idaccount: '',
             cellphone: '',
             dialog: false,
             editedIndex: -1,
@@ -151,7 +147,6 @@
                 this.dni = item.dni;
                 this.districtid = item.districtId;
                 this.email = item.email;
-                this.idaccount = item.idAccount;
                 this.cellphone = item.cellphone;
                 this.editedIndex = 1;
                 this.dialog = true;
@@ -181,7 +176,6 @@
                 this.dni = "";
                 this.districtid = "";
                 this.email = "";
-                this.idaccount = "";
                 this.cellphone = "";
                 this.editedIndex=-1;
             },
@@ -195,7 +189,6 @@
                         'dni': me.dni,
                         'districtid': me.districtid,
                         'email': me.email,
-                        'idaccount': me.idaccount,
                         'cellphone': me.cellphone
                     }).then(function(response){
                         me.close();
@@ -212,7 +205,6 @@
                         'dni': me.dni,
                         'districtid': me.districtid,
                         'email': me.email,
-                        'idaccount': me.idaccount,
                         'cellphone': me.cellphone
                     }).then(function(response){
                         me.close();

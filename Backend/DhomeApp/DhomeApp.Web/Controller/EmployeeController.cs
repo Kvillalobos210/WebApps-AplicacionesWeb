@@ -34,6 +34,7 @@ namespace DhomeApp.Web.Controller
                 Firstname = e.Firstname,
                 Lastname = e.Lastname,
                 Dni = e.Dni,
+                Email = e.Email,
                 Cellphone = e.Cellphone,
                 Description = e.Description,
                 SpecialtyId=e.SpecialtyId,
@@ -58,6 +59,7 @@ namespace DhomeApp.Web.Controller
                 Firstname = employee.Firstname,
                 Lastname = employee.Lastname,
                 Dni = employee.Dni,
+                Email = employee.Email,
                 Cellphone = employee.Cellphone,
                 Description = employee.Description,
                 SpecialtyId=employee.SpecialtyId,
@@ -87,7 +89,6 @@ namespace DhomeApp.Web.Controller
             employee.Email = cmodel.Email;
             employee.Description = cmodel.Description;
             employee.Cellphone = cmodel.Cellphone;
-            employee.IdAccount = cmodel.IdAccount;
             employee.SpecialtyId = cmodel.SpecialtyId;
             employee.DistrictId = cmodel.DistrictId;
 
@@ -120,7 +121,6 @@ namespace DhomeApp.Web.Controller
                 Email = cmodel.Email,
                 Description = cmodel.Description,
                 Cellphone = cmodel.Cellphone,
-                IdAccount = cmodel.IdAccount,
                 SpecialtyId=cmodel.SpecialtyId,
                 DistrictId=cmodel.DistrictId
             };

@@ -40,10 +40,6 @@ namespace DhomeApp.Data.Mapping
                 .HasColumnName("Cellphone")
                 .IsUnicode(false);
 
-            builder.Property(e => e.IdAccount)
-                .HasColumnName("idAccount")
-                .IsUnicode(false);
-
             builder.HasOne(e => e.Specialty)
                 .WithMany(e => e.Employees)
                 .HasForeignKey(e => e.SpecialtyId)

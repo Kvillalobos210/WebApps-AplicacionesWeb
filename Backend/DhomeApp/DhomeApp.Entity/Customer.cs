@@ -26,9 +26,6 @@ namespace DhomeApp.Entity
         [Required(ErrorMessage = "Todo cliente debe registrar un email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Todo cliente debe registrar una cuenta")]
-        public int IdAccount { get; set; }
-
         [Required(ErrorMessage = "Todo cliente debe registrar un telefono")]
         public int Cellphone { get; set; }
         

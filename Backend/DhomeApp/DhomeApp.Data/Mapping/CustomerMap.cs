@@ -33,10 +33,6 @@ namespace DhomeApp.Data.Mapping
                 .HasColumnName("Email")
                 .IsUnicode(false);
 
-            builder.Property(c => c.IdAccount)
-                .HasColumnName("idAccount")
-                .IsUnicode(false);
-
             builder.Property(c => c.Cellphone)
                 .HasColumnName("Cellphone")
                 .IsUnicode(false);

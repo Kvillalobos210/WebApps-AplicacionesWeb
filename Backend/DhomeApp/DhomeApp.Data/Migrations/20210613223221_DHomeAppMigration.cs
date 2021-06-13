@@ -2,7 +2,7 @@
 
 namespace DhomeApp.Data.Migrations
 {
-    public partial class MigrationDHome : Migration
+    public partial class DHomeAppMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -75,7 +75,6 @@ namespace DhomeApp.Data.Migrations
                     Lastname = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     Dni = table.Column<string>(type: "varchar(8)", unicode: false, maxLength: 8, nullable: false),
                     Email = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
-                    idAccount = table.Column<int>(type: "int", unicode: false, nullable: false),
                     Cellphone = table.Column<int>(type: "int", unicode: false, nullable: false),
                     DistrictId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -102,7 +101,7 @@ namespace DhomeApp.Data.Migrations
                     Email = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
                     Description = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
                     Cellphone = table.Column<int>(type: "int", unicode: false, nullable: false),
-                    idAccount = table.Column<int>(type: "int", unicode: false, nullable: false),
+                    IdAccount = table.Column<int>(type: "int", nullable: false),
                     SpecialtyId = table.Column<int>(type: "int", nullable: false),
                     DistrictId = table.Column<int>(type: "int", nullable: false)
                 },

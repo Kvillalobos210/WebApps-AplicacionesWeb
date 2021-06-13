@@ -35,6 +35,8 @@ namespace DhomeApp.Web.Controller
                 Firstname = c.Firstname,
                 Lastname = c.Lastname,
                 Dni = c.Dni,
+                Email = c.Email,
+                Cellphone = c.Cellphone,
                 DistrictId=c.DistrictId
             });
         }
@@ -56,6 +58,8 @@ namespace DhomeApp.Web.Controller
                 Firstname = customer.Firstname,
                 Lastname = customer.Lastname,
                 Dni = customer.Dni,
+                Email = customer.Email,
+                Cellphone = customer.Cellphone,
                 DistrictId = customer.DistrictId
             });
         }
@@ -81,7 +85,6 @@ namespace DhomeApp.Web.Controller
             customer.Dni = cmodel.Dni;
             customer.Email = cmodel.Email;
             customer.Cellphone = cmodel.Cellphone;
-            customer.IdAccount = cmodel.IdAccount;
             customer.DistrictId = cmodel.DistrictId;
 
             try
@@ -115,7 +118,6 @@ namespace DhomeApp.Web.Controller
                 Dni = cmodel.Dni,
                 Email = cmodel.Email,
                 Cellphone = cmodel.Cellphone,
-                IdAccount = cmodel.IdAccount,
                 DistrictId=cmodel.DistrictId
             };
 

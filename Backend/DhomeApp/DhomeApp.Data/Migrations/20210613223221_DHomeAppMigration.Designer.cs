@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DhomeApp.Data.Migrations
 {
     [DbContext(typeof(DbContextDhomeApp))]
-    [Migration("20210528232435_MigrationDHome")]
-    partial class MigrationDHome
+    [Migration("20210613223221_DHomeAppMigration")]
+    partial class DHomeAppMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -130,11 +130,6 @@ namespace DhomeApp.Data.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("Firstname");
 
-                    b.Property<int>("IdAccount")
-                        .IsUnicode(false)
-                        .HasColumnType("int")
-                        .HasColumnName("idAccount");
-
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -212,9 +207,7 @@ namespace DhomeApp.Data.Migrations
                         .HasColumnName("Firstname");
 
                     b.Property<int>("IdAccount")
-                        .IsUnicode(false)
-                        .HasColumnType("int")
-                        .HasColumnName("idAccount");
+                        .HasColumnType("int");
 
                     b.Property<string>("Lastname")
                         .IsRequired()

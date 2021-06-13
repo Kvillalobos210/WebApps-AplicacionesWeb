@@ -128,11 +128,6 @@ namespace DhomeApp.Data.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("Firstname");
 
-                    b.Property<int>("IdAccount")
-                        .IsUnicode(false)
-                        .HasColumnType("int")
-                        .HasColumnName("idAccount");
-
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -210,9 +205,7 @@ namespace DhomeApp.Data.Migrations
                         .HasColumnName("Firstname");
 
                     b.Property<int>("IdAccount")
-                        .IsUnicode(false)
-                        .HasColumnType("int")
-                        .HasColumnName("idAccount");
+                        .HasColumnType("int");
 
                     b.Property<string>("Lastname")
                         .IsRequired()
