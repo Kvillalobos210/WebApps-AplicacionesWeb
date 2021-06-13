@@ -3,7 +3,7 @@
     <v-data-iterator
       :items="customers"
       item-key="name"
-      :items-per-page="4"
+      :items-per-page="100"
       hide-default-footer
     >
         <template v-slot:header>
@@ -29,22 +29,25 @@
                             <v-container>
                                 <v-row>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="firstName" label="Nombre del cliente"></v-text-field>
+                                        <v-text-field v-model="firstname" label="Nombre del cliente"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="lastName" label="Apellido del cliente"></v-text-field>
+                                        <v-text-field v-model="lastname" label="Apellido del cliente"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="dnI" label="DNI del cliente"></v-text-field>
+                                        <v-text-field v-model="dni" label="DNI del cliente"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="districtId" label="Código del distrito"></v-text-field>
+                                        <v-text-field v-model="districtid" label="Código del distrito"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="emaiL" label="Email del distrito"></v-text-field>
+                                        <v-text-field v-model="email" label="Email del cliente"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="cellphonE" label="Teléfono del distrito"></v-text-field>
+                                        <v-text-field v-model="idaccount" label="id del cliente"></v-text-field>
+                                    </v-col>
+                                    <v-col cols="12" sm="12" md="12">
+                                        <v-text-field v-model="cellphone" label="Teléfono del cliente"></v-text-field>
                                     </v-col>
                                 </v-row>
                             </v-container>
@@ -71,7 +74,7 @@
           >
             <v-card>
               <v-card-title>
-                <h4>{{ item.firstname + " " + item.lastname}}</h4>
+                <h4>{{ item.firstname + " " + item.lastname }}</h4>
                 <td class="justify-center layout px-0">
                     <v-icon small class="mr-2" @click="editItem(item)">edit</v-icon>
                 </td>
@@ -80,7 +83,6 @@
               <td>
                 <h4>DNI: {{ item.dni }}</h4>
               </td>
-              <v-spacer></v-spacer>
               <br>
               <td>
                 <h4>código del distrito: {{ item.districtId }}</h4>
@@ -88,6 +90,7 @@
             </v-card>
           </v-col>
         </v-row>
+
       </template>
     </v-data-iterator>
   </v-container>
@@ -99,22 +102,23 @@
     
     export default {
         data:() => ({
-            dialog: false,
             search: '',
             customerid: '',
             firstname: '',
             lastname: '',
             dni: '',
-            email: '',
-            cellphone: '',
             districtid: '',
+            email: '',
+            idaccount: '',
+            cellphone: '',
+            dialog: false,
             editedIndex: -1,
             customers: [],
+            districts: [],
             headers: [
                 { text: 'FirstName', value: 'firstname', sortable: true },
                 { text: 'LastName', value: 'lastname', sortable: true },
-                
-            ]
+            ],
         }),
         computed: {
             formTitle() {
@@ -129,10 +133,12 @@
         created() {
             this.listCustomers();
         },
+
         methods: {
             listCustomers() {
                 let me= this;
-                axios.get('api/Customers').then(function(response){
+                axios.get('api/Customers')
+                .then(function(response){
                     me.customers = response.data;
                 }).catch(function(error){
                     console.log(error);
@@ -140,12 +146,13 @@
             },
             editItem(item) {
                 this.customerid = item.customerId;
-                this.firstname = item.firstName;
-                this.lastname = item.lastName;
-                this.dni = item.dnI;
-                //this.email = item.emaiL;
-                //this.cellphone = cellphonE;
+                this.firstname = item.firstname;
+                this.lastname = item.lastname;
+                this.dni = item.dni;
                 this.districtid = item.districtId;
+                this.email = item.email;
+                this.idaccount = item.idAccount;
+                this.cellphone = item.cellphone;
                 this.editedIndex = 1;
                 this.dialog = true;
             },
@@ -155,7 +162,7 @@
                     axios.delete('api/Customers/' + item.customerId, {
                         'customerid': item.customerId
                     }).then(function(response){
-                        console.log(item.CustomerId);
+                        console.log(item.customerId);
                         me.listCustomers();
                         me.close();
                         me.clean();
@@ -165,24 +172,31 @@
             },
             close() {
                 this.dialog = false;
+                this.clean();
             },
             clean() {
                 this.customerid = "";
                 this.firstname = "";
                 this.lastname = "";
                 this.dni = "";
-                this.email = "";
                 this.districtid = "";
+                this.email = "";
+                this.idaccount = "";
+                this.cellphone = "";
+                this.editedIndex=-1;
             },
             save() {
                 let me=this;
-                if(this.editedIndex >- 1) {
+                if(this.editedIndex > -1) {
                     axios.put('api/Customers/PutCustomer',{
                         'customerid': me.customerid,
                         'firstname': me.firstname,
                         'lastname': me.lastname,
                         'dni': me.dni,
-                        'districtid': me.districtid
+                        'districtid': me.districtid,
+                        'email': me.email,
+                        'idaccount': me.idaccount,
+                        'cellphone': me.cellphone
                     }).then(function(response){
                         me.close();
                         me.listCustomers();
@@ -196,8 +210,10 @@
                         'firstname': me.firstname,
                         'lastname': me.lastname,
                         'dni': me.dni,
+                        'districtid': me.districtid,
                         'email': me.email,
-                        'districtid': me.districtid
+                        'idaccount': me.idaccount,
+                        'cellphone': me.cellphone
                     }).then(function(response){
                         me.close();
                         me.listCustomers();
@@ -207,8 +223,8 @@
                     });
                 }
                 this.close();
-            }
-        }
+            },
+        },
     }
 </script>
 

@@ -3,7 +3,7 @@
     <v-data-iterator
       :items="districts"
       item-key="name"
-      :items-per-page="4"
+      :items-per-page="100"
       hide-default-footer
     >
         <template v-slot:header>
@@ -142,12 +142,13 @@
             },
             close() {
                 this.dialog = false;
+                this.clean();
             },
             clean() {
                 this.districtid = "";
                 this.districtname = "";
                 this.cityid = "";
-              
+                this.editedIndex=-1;
             },
             save() {
                 let me=this;

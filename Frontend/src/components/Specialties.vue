@@ -3,7 +3,7 @@
     <v-data-iterator
       :items="specialties"
       item-key="name"
-      :items-per-page="4"
+      :items-per-page="100"
       hide-default-footer
     >
         <template v-slot:header>
@@ -88,7 +88,7 @@
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'New Specialty': 'Edit Specialty';
+                return this.editedIndex === -1 ? 'Agregar Especialidad': 'Editar Especialidad';
             }
         },
         watch: {
@@ -130,11 +130,12 @@
             },
             close() {
                 this.dialog = false;
+                this.clean();
             },
             clean() {
                 this.specialtyid = "";
                 this.specialtyname = "";
-              
+                this.editedIndex=-1;
             },
             save() {
                 let me=this;

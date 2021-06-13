@@ -3,7 +3,7 @@
     <v-data-iterator
       :items="cities"
       item-key="name"
-      :items-per-page="4"
+      :items-per-page="100"
       hide-default-footer
     >
         <template v-slot:header>
@@ -44,7 +44,7 @@
         </v-dialog>
         <!--<v-btn color="primary" dark class="mb-2" v-on="on">New City</v-btn>-->
       </template>
-      <template v-slot:default="{ items }">
+      <template v-slot:default="{ items }" >
         <v-row>
           <v-col
             v-for="item in items"
@@ -88,21 +88,22 @@
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'Agregar Departamento': 'Editar Departamento';
-            }
+                return this.editedIndex === -1 ? 'Agregar Departamento' : 'Editar Departamento';
+            },
         },
         watch: {
             dialog (val) {
                 val || this.close()
-            }
+            },
         },
         created() {
             this.listCities();
         },
         methods: {
             listCities() {
-                let me= this;
-                axios.get('api/City').then(function(response){
+                let me = this;
+                axios.get('api/City')
+                .then(function(response){
                     me.cities = response.data;
                 }).catch(function(error){
                     console.log(error);
@@ -130,15 +131,17 @@
             },
             close() {
                 this.dialog = false;
+                this.editedIndex=-1;
+                this.clean();
             },
             clean() {
-                this.cityid = "";
-                this.cityname = "";
-              
+                this.cityid="";
+                this.cityname="";
+                this.editedIndex=-1;
             },
             save() {
-                let me=this;
-                if(this.editedIndex >- 1) {
+                let me = this;
+                if(this.editedIndex > -1) {
                     axios.put('api/City/PutCity',{
                         'cityid': me.cityid,
                         'cityname': me.cityname
@@ -149,6 +152,7 @@
                     }).catch(function(error) {
                         console.log(error);
                     });
+                    //me.clean();
                 }
                 else {
                     axios.post('api/City', {
@@ -162,7 +166,7 @@
                     });
                 }
                 this.close();
-            }
-        }
+            },
+        },
     }
 </script>
