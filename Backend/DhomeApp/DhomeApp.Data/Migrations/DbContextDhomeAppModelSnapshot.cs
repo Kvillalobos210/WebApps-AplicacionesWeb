@@ -204,9 +204,6 @@ namespace DhomeApp.Data.Migrations
                         .HasColumnType("varchar(max)")
                         .HasColumnName("Firstname");
 
-                    b.Property<int>("IdAccount")
-                        .HasColumnType("int");
-
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .IsUnicode(false)

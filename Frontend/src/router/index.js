@@ -6,6 +6,7 @@ import Employees from '../components/Employees.vue'
 import Cities from '../components/Cities.vue'
 import Specialties from '../components/Specialties.vue'
 import Districts from '../components/Districts.vue'
+import Appointments from '../components/Appointments.vue'
 
 Vue.use(VueRouter)
 
@@ -17,33 +18,33 @@ const routes = [
   },
   {
     path: '/customers',
-    name: 'customers', //esto va en el list-components-item
-    component: Customers //Es igual al componente que hemos puesto (Category.vue)
-    //De aquí nos vamos a App.vue
+    name: 'customers', 
+    component: Customers 
   },
   {
     path: '/employees',
-    name: 'employees', //esto va en el list-components-item
-    component: Employees //Es igual al componente que hemos puesto (Category.vue)
-    //De aquí nos vamos a App.vue
+    name: 'employees', 
+    component: Employees 
   },
   {
     path: '/cities',
-    name: 'cities', //esto va en el list-components-item
-    component: Cities //Es igual al componente que hemos puesto (Category.vue)
-    //De aquí nos vamos a App.vue
+    name: 'cities', 
+    component: Cities 
   },
   {
     path: '/specialties',
-    name: 'specialties', //esto va en el list-components-item
-    component: Specialties //Es igual al componente que hemos puesto (Category.vue)
-    //De aquí nos vamos a App.vue
+    name: 'specialties', 
+    component: Specialties 
   },
   {
     path: '/districts',
-    name: 'districts', //esto va en el list-components-item
-    component: Districts //Es igual al componente que hemos puesto (Category.vue)
-    //De aquí nos vamos a App.vue
+    name: 'districts', 
+    component: Districts 
+  },
+  {
+    path: '/appointments',
+    name: 'appointments', 
+    component: Appointments 
   },
   {
     path: '/about',

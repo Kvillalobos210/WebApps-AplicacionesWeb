@@ -56,11 +56,21 @@
             <v-card>
               <v-card-title>
                 <h4>{{ item.specialtyName }}</h4>
-                <td class="justify-center layout px-0">
-                    <v-icon small class="mr-2" @click="editItem(item)">edit</v-icon>
-                </td>
+                <v-btn
+              color="accent"
+              fab
+              small
+              dark
+              class="mx-16"
+            >
+              <td>
+                    <v-icon @click="editItem(item)">edit</v-icon>
+              </td></v-btn>
               </v-card-title>
-              <v-divider></v-divider>
+            <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>id: {{ item.specialtyId }}</h4>
+              </td>
             </v-card>
           </v-col>
         </v-row>

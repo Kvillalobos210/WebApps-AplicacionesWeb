@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-data-iterator
-      :items="customers"
+      :items="appointments"
       item-key="name"
       :items-per-page="100"
       hide-default-footer
@@ -14,11 +14,11 @@
           flat
         >
 
-          <v-toolbar-title>Lista de clientes</v-toolbar-title>
+          <v-toolbar-title>Lista de Citas</v-toolbar-title>
         </v-toolbar>
         <v-dialog v-model="dialog" max-width="800px">
                     <template v-slot:activator="{ on }">
-                        <v-btn color="primary" dark class="mb-2" v-on="on">Nuevo Cliente</v-btn>
+                        <v-btn color="primary" dark class="mb-2" v-on="on">Nueva Cita</v-btn>
                     </template>
                     <v-card>
                         <v-card-title>
@@ -29,22 +29,28 @@
                             <v-container>
                                 <v-row>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="firstname" label="Nombre del cliente"></v-text-field>
+                                        <v-text-field v-model="description" label="Ingrese una descripción de su cita"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="lastname" label="Apellido del cliente"></v-text-field>
+                                        <v-text-field v-model="appointmentdate" label="Ingrese día de la cita"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="dni" label="DNI del cliente"></v-text-field>
+                                        <v-text-field v-model="address" label="Ingrese su dirección"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="districtid" label="id del distrito"></v-text-field>
+                                        <v-text-field v-model="valorization" label="Añada una valorización"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="email" label="Email del cliente"></v-text-field>
+                                        <v-text-field v-model="status" label="Status"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="cellphone" label="Teléfono del cliente"></v-text-field>
+                                        <v-text-field v-model="customerid" label="Id del cliente"></v-text-field>
+                                    </v-col>
+                                      <v-col cols="12" sm="12" md="12">
+                                        <v-text-field v-model="employeeid" label="Id del trabajador"></v-text-field>
+                                    </v-col>
+                                      <v-col cols="12" sm="12" md="12">
+                                        <v-text-field v-model="paymentmethodid" label="Id del método de pago"></v-text-field>
                                     </v-col>
                                 </v-row>
                             </v-container>
@@ -71,7 +77,7 @@
           >
             <v-card>
               <v-card-title>
-                <h4>{{ item.firstname + " " + item.lastname }}</h4>
+                <h4>Cita {{ item.appointmentId }}</h4>
                 <v-btn
               color="accent"
               fab
@@ -82,14 +88,26 @@
               <td>
                     <v-icon @click="editItem(item)">edit</v-icon>
               </td></v-btn>
-                </v-card-title>
+              </v-card-title>
                 <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>DNI: {{ item.dni }}</h4>
+                <h4>id de Cliente: {{ item.customerId }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id del Distrito: {{ item.districtId }}</h4>
+                <h4>id de Trabajador: {{ item.employeeId }}</h4>
+              </td>
+              <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>Descripción: {{ item.description }}</h4>
+              </td>
+              <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>Método de pago: {{ item.paymentMethodId }}</h4>
+              </td>
+              <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>Status: {{ item.status }}</h4>
               </td>
             </v-card>
           </v-col>
@@ -107,25 +125,28 @@
     export default {
         data:() => ({
             search: '',
+            appointmentid: '',
+            description: '',
+            appointmentdate: '',
+            address: '',
+            valorization: '',
+            status: '',
             customerid: '',
-            firstname: '',
-            lastname: '',
-            dni: '',
-            districtid: '',
-            email: '',
-            cellphone: '',
+            employeeid: '',
+            paymentmethodid: '',
             dialog: false,
             editedIndex: -1,
-            customers: [],
+            appointments: [],
             districts: [],
+            paymentmethodid: [],
             headers: [
-                { text: 'FirstName', value: 'firstname', sortable: true },
-                { text: 'LastName', value: 'lastname', sortable: true },
+                { text: 'Appointment', value: 'appointmentid', sortable: true },
+                
             ],
         }),
         computed: {
             formTitle() {
-                return this.editedIndex === -1 ? 'Agregar Cliente': 'Editar Cliente';
+                return this.editedIndex === -1 ? 'Agregar cita': 'Editar cita';
             }
         },
         watch: {
@@ -134,38 +155,40 @@
             }
         },
         created() {
-            this.listCustomers();
+            this.listAppointments();
         },
 
         methods: {
-            listCustomers() {
+            listAppointments() {
                 let me= this;
-                axios.get('api/Customers')
+                axios.get('api/Appointment')
                 .then(function(response){
-                    me.customers = response.data;
+                    me.appointments = response.data;
                 }).catch(function(error){
                     console.log(error);
                 })
             },
             editItem(item) {
+                this.appointmentid = item.appointmentId;
+                this.description = item.description;
+                this.appointmentdate = item.appointmentDate;
+                this.address= item.address;
+                this.valorization = item.valorization;
+                this.status = item.status;
                 this.customerid = item.customerId;
-                this.firstname = item.firstname;
-                this.lastname = item.lastname;
-                this.dni = item.dni;
-                this.districtid = item.districtId;
-                this.email = item.email;
-                this.cellphone = item.cellphone;
+                this.employeeid = item.employeeId;
+                this.paymentmethodid = item.paymentMethodId;
                 this.editedIndex = 1;
                 this.dialog = true;
             },
             deleteItem(item) {
                 let me = this;
-                if(confirm('¿Estás seguro que quieres eliminar esta ciudad?'))
-                    axios.delete('api/Customers/' + item.customerId, {
-                        'customerid': item.customerId
+                if(confirm('¿Estás seguro que quieres eliminar esta cita?'))
+                    axios.delete('api/Appointment/' + item.appointmentId, {
+                        'appointmentid': item.appointmentId
                     }).then(function(response){
-                        console.log(item.customerId);
-                        me.listCustomers();
+                        console.log(item.appointmentId);
+                        me.listAppointments();
                         me.close();
                         me.clean();
                     }).catch(function(error){
@@ -177,45 +200,53 @@
                 this.clean();
             },
             clean() {
-                this.customerid = "";
-                this.firstname = "";
-                this.lastname = "";
-                this.dni = "";
-                this.districtid = "";
-                this.email = "";
-                this.cellphone = "";
+                this.appointmentid = "";
+                this.description = "";
+                this.appointmentdate = "";
+                this.address = "";
+                this.valorization = "";
+                this.status= "";
+                this.customerid= "";
+                this.employeeid= "";
+                this.paymentmethodid= "";
                 this.editedIndex=-1;
             },
             save() {
                 let me=this;
                 if(this.editedIndex > -1) {
-                    axios.put('api/Customers/PutCustomer',{
+                    axios.put('api/Appointment/PutAppointment',{
+                        'appointmentid': me.appointmentid,
+                        'description': me.description,
+                        'appointmentdate': me.appointmentdate,
+                        'address': me.address,
+                        'valorization': me.valorization,
+                        'status': me.status,
                         'customerid': me.customerid,
-                        'firstname': me.firstname,
-                        'lastname': me.lastname,
-                        'dni': me.dni,
-                        'districtid': me.districtid,
-                        'email': me.email,
-                        'cellphone': me.cellphone
+                        'employeeid': me.employeeid,
+                        'paymentmethodid': me.paymentmethodid
+
                     }).then(function(response){
                         me.close();
-                        me.listCustomers();
+                        me.listAppointments();
                         me.clean();
                     }).catch(function(error) {
                         console.log(error);
                     });
                 }
                 else {
-                    axios.post('api/Customers', {
-                        'firstname': me.firstname,
-                        'lastname': me.lastname,
-                        'dni': me.dni,
-                        'districtid': me.districtid,
-                        'email': me.email,
-                        'cellphone': me.cellphone
+                    axios.post('api/Appointment', {
+                        'description': me.description,
+                        'appointmentid': me.appointmentid,
+                        'address': me.address,
+                        'valorization': me.valorization,
+                        'status': me.status,
+                        'customerid': me.customerid,
+                        'employeeid': me.employeeid,
+                        'paymentmethodid': me.paymentmethodid
+
                     }).then(function(response){
                         me.close();
-                        me.listCustomers();
+                        me.listAppointments();
                         me.clean();
                     }).catch(function(error) {
                         console.log(error);
@@ -226,4 +257,3 @@
         },
     }
 </script>
-

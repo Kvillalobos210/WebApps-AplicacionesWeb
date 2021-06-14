@@ -15,20 +15,6 @@
           flat
         >
         <v-toolbar-title>Lista de distritos disponibles del Perú</v-toolbar-title>
-        <!--Boton de listar-->
-        <v-menu transition="scroll-y-transition">
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          color="secondary"
-          class="ma-2"
-          v-bind="attrs"
-          v-on="on"
-        >
-          Ciudades disponibles
-        </v-btn>
-      </template>
-    </v-menu>
-
         </v-toolbar>
         <v-dialog v-model="dialog" max-width="800px">
                     <template v-slot:activator="{ on }">
@@ -74,13 +60,24 @@
             <v-card>
               <v-card-title>
                 <h4>{{ item.districtName }}</h4>
-                <td class="justify-center layout px-0">
-                    <v-icon small class="mr-2" @click="editItem(item)">edit</v-icon>
-                </td>
+                <v-btn
+              color="accent"
+              fab
+              small
+              dark
+              class="mx-16"
+            >
+              <td>
+                    <v-icon @click="editItem(item)">edit</v-icon>
+              </td></v-btn>
               </v-card-title>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>Departamento: {{ item.cityId }}</h4>
+                <h4>id: {{ item.districtId }}</h4>
+              </td>
+              <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>id de Departamento: {{ item.cityId }}</h4>
               </td>
             </v-card>
           </v-col>
@@ -90,6 +87,9 @@
     </v-data-iterator>
   </v-container>
 </template>
+
+
+
 <script>
     import axios from 'axios'
     
@@ -107,6 +107,7 @@
             items: [
                 { text: 'CityName', value: 'cityname', sortable: true }
             ]
+            
         }),
         computed: {
             formTitle() {
