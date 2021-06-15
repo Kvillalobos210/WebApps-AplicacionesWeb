@@ -63,7 +63,7 @@
                         </v-card-text>
                     </v-card>
         </v-dialog>
-        <!--<v-btn color="primary" dark class="mb-2" v-on="on">New City</v-btn>-->
+     
       </template>
       <template v-slot:default="{ items }">
         <v-row>
@@ -236,7 +236,7 @@
                 else {
                     axios.post('api/Appointment', {
                         'description': me.description,
-                        'appointmentid': me.appointmentid,
+                        'appointmentdate': me.appointmentdate,
                         'address': me.address,
                         'valorization': me.valorization,
                         'status': me.status,

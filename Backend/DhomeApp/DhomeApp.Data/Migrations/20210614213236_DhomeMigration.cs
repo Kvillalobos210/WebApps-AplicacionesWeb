@@ -2,7 +2,7 @@
 
 namespace DhomeApp.Data.Migrations
 {
-    public partial class DhomeAppMigration : Migration
+    public partial class DhomeMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

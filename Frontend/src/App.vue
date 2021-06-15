@@ -45,7 +45,7 @@
             </v-list-item>
             <v-list-item :to=" { name: 'employees' } " color="menuclick">
               <v-list-item-action>
-                <v-icon>grid_view</v-icon>
+                <v-icon>engineering</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
@@ -55,7 +55,7 @@
             </v-list-item>
             <v-list-item :to=" { name: 'customers' } " color="menuclick">
               <v-list-item-action>
-                <v-icon>grid_view</v-icon>
+                <v-icon>groups</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
@@ -65,7 +65,7 @@
             </v-list-item>
             <v-list-item :to=" { name: 'specialties' } " color="menuclick">
               <v-list-item-action>
-                <v-icon>grid_view</v-icon>
+                <v-icon>account_tree</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
@@ -75,7 +75,7 @@
             </v-list-item>
             <v-list-item :to=" { name: 'districts' } " color="menuclick">
               <v-list-item-action>
-                <v-icon>grid_view</v-icon>
+                <v-icon>location_on</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
@@ -85,7 +85,7 @@
             </v-list-item>
             <v-list-item :to=" { name: 'cities' } " color="menuclick">
               <v-list-item-action>
-                <v-icon>grid_view</v-icon>
+                <v-icon>map</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>
@@ -105,7 +105,7 @@
             </v-list-item>
             <v-list-item :to=" { name: 'appointments' } " color="menuclick">
               <v-list-item-action>
-                <v-icon>grid_view</v-icon>
+                <v-icon>book_online</v-icon>
               </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>

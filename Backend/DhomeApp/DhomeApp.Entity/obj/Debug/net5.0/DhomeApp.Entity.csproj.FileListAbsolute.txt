@@ -34,3 +34,15 @@ C:\Users\User\Documents\DHomeGianella\WebApps-AplicacionesWeb\Backend\DhomeApp\D
 C:\Users\User\Documents\DHomeGianella\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.dll
 C:\Users\User\Documents\DHomeGianella\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\ref\DhomeApp.Entity.dll
 C:\Users\User\Documents\DHomeGianella\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.pdb
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\DhomeApp.Entity.deps.json
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\DhomeApp.Entity.dll
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\ref\DhomeApp.Entity.dll
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\DhomeApp.Entity.pdb
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.csprojAssemblyReference.cache
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.AssemblyInfoInputs.cache
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.AssemblyInfo.cs
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.csproj.CoreCompileInputs.cache
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.dll
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\ref\DhomeApp.Entity.dll
+D:\WebApp-AW\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.pdb

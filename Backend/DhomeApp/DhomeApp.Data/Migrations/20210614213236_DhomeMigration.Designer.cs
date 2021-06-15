@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DhomeApp.Data.Migrations
 {
     [DbContext(typeof(DbContextDhomeApp))]
-    [Migration("20210614010836_DhomeAppMigration")]
-    partial class DhomeAppMigration
+    [Migration("20210614213236_DhomeMigration")]
+    partial class DhomeMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
