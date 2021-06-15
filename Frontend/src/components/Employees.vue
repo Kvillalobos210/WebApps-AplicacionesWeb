@@ -90,17 +90,21 @@
                     <v-icon @click="editItem(item)">edit</v-icon>
               </td></v-btn>
                 </v-card-title>
+                    <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>ID del trabajador: {{ item.employeeId }}</h4>
+              </td>
                 <v-divider></v-divider>
               <td class="justify-center layout px-0">
                 <h4>DNI: {{ item.dni }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id de Especialidad: {{ item.specialtyId }}</h4>
+                <h4>ID de Especialidad: {{ item.specialtyId }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id de Distrito: {{ item.districtId }}</h4>
+                <h4>ID de Distrito: {{ item.districtId }}</h4>
               </td>
             </v-card>
           </v-col>

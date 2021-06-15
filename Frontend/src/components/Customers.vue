@@ -83,13 +83,17 @@
                     <v-icon @click="editItem(item)">edit</v-icon>
               </td></v-btn>
                 </v-card-title>
+                    <v-divider></v-divider>
+              <td class="justify-center layout px-0">
+                <h4>ID del cliente: {{ item.customerId }}</h4>
+              </td>
                 <v-divider></v-divider>
               <td class="justify-center layout px-0">
                 <h4>DNI: {{ item.dni }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id del Distrito: {{ item.districtId }}</h4>
+                <h4>ID del Distrito: {{ item.districtId }}</h4>
               </td>
             </v-card>
           </v-col>

@@ -91,11 +91,11 @@
               </v-card-title>
                 <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id de Cliente: {{ item.customerId }}</h4>
+                <h4>ID de Cliente: {{ item.customerId }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id de Trabajador: {{ item.employeeId }}</h4>
+                <h4>ID de Trabajador: {{ item.employeeId }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">

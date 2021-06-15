@@ -71,7 +71,7 @@
             </v-card-title>
             <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id: {{ item.cityId }}</h4>
+                <h4>ID: {{ item.cityId }}</h4>
               </td>
               
             </v-card>

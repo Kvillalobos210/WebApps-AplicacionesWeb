@@ -73,11 +73,11 @@
               </v-card-title>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id: {{ item.districtId }}</h4>
+                <h4>ID: {{ item.districtId }}</h4>
               </td>
               <v-divider></v-divider>
               <td class="justify-center layout px-0">
-                <h4>id de Departamento: {{ item.cityId }}</h4>
+                <h4>ID de Departamento: {{ item.cityId }}</h4>
               </td>
             </v-card>
           </v-col>
