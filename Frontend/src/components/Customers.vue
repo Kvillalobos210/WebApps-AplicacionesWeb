@@ -164,7 +164,7 @@
             },
             deleteItem(item) {
                 let me = this;
-                if(confirm('¿Estás seguro que quieres eliminar esta ciudad?'))
+                if(confirm('¿Estás seguro que quieres eliminar este cliente?'))
                     axios.delete('api/Customers/' + item.customerId, {
                         'customerid': item.customerId
                     }).then(function(response){
