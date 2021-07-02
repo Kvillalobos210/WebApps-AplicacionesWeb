@@ -7,6 +7,12 @@ import Cities from '../components/Cities.vue'
 import Specialties from '../components/Specialties.vue'
 import Districts from '../components/Districts.vue'
 import Appointments from '../components/Appointments.vue'
+import Register from '../components/Register.vue'
+import RegisterCustomer from '../components/RegisterCustomer.vue'
+import RegisterEmployee from '../components/RegisterEmployee.vue'
+import Login from '../components/Login.vue'
+import HomeLogueado from '../components/HomeLogueado.vue'
+import HomeEmployee from '../components/HomeEmployee.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +51,36 @@ const routes = [
     path: '/appointments',
     name: 'appointments', 
     component: Appointments 
+  },
+  {
+    path: '/registers',
+    name: 'registers', 
+    component: Register 
+  },
+  {
+    path: '/login',
+    name: 'login', 
+    component: Login 
+  },
+  {
+    path: '/registerEmployees',
+    name: 'registerEmployees', 
+    component: RegisterEmployee 
+  },
+  {
+    path: '/registerCustomers',
+    name: 'registerCustomers', 
+    component: RegisterCustomer 
+  },
+  {
+    path: '/homeLogueado',
+    name: 'homeLogueado', 
+    component: HomeLogueado
+  },
+  {
+    path: '/homeEmployee',
+    name: 'homeEmployee', 
+    component: HomeEmployee
   },
   {
     path: '/about',

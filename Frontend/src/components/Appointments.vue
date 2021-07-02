@@ -38,7 +38,7 @@
                                         <v-text-field v-model="address" label="Ingrese su dirección"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="valorization" label="Añada una valorización"></v-text-field>
+                                        <v-text-field v-model="valorization" label="Añada una valorización del 1 al 5"></v-text-field>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
                                         <v-text-field v-model="status" label="Status"></v-text-field>
@@ -50,7 +50,7 @@
                                         <v-text-field v-model="employeeid" label="Id del trabajador"></v-text-field>
                                     </v-col>
                                       <v-col cols="12" sm="12" md="12">
-                                        <v-text-field v-model="paymentmethodid" label="Id del método de pago"></v-text-field>
+                                        <v-text-field v-model="paymentmethodid" label="Id del método de pago (1=Efectivo, 2=Tarjeta)"></v-text-field>
                                     </v-col>
                                 </v-row>
                             </v-container>

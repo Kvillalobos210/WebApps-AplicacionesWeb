@@ -19,14 +19,14 @@
           Selecciona una opción para registrarse 
           
         </p>
-        <v-btn
+    <v-btn
       class="ma-2"
       :loading="loading1"
       :disabled="loading1"
       color="success"
-      @click="loader = 'loading1'"
+      @click=router-link to = registers
     >
-      Cliente
+      Registrate
       <template v-slot:loader>
         <span>Loading...</span>
       </template>
@@ -37,9 +37,9 @@
       :loading="loading2"
       :disabled="loading2"
       color="success"
-      @click="loader = 'loading2'"
+      @click=router-link to = login
     >
-      Trabajador
+      Inicia Sesión
       <template v-slot:loader>
         <span>Loading...</span>
       </template>
