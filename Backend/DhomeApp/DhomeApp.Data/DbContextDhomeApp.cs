@@ -22,6 +22,7 @@ namespace DhomeApp.Data
         public DbSet<City> City { get; set; }
         public DbSet<Specialty> Specialty { get; set; }
         public DbSet<PaymentMethod> PaymentMethod { get; set; }
+        public DbSet<Account> Account { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,6 +40,7 @@ namespace DhomeApp.Data
             modelBuilder.ApplyConfiguration(new CityMap());
             modelBuilder.ApplyConfiguration(new SpecialtyMap());
             modelBuilder.ApplyConfiguration(new PaymentMethodMap());
+            modelBuilder.ApplyConfiguration(new AccountMap());
         }
 
     }

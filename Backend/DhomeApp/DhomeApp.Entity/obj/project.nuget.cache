@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iBVRR9xDw5JN79SLH2cq9meVyGruHcwUQx2SMiBzMIyU8XJD98oFOMWryDk3HPESWCHxL2j8PgDz6iyb7g0hSQ==",
+  "dgSpecHash": "5gGXBytKXBh1O0pDici5QVCLYrhUlpFhBP8bF3H92rHPAWEUms4yxuV0HUEuIAiaz1Wni5KwwSWdrhc/CkVZBQ==",
   "success": true,
-  "projectFilePath": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj",
+  "projectFilePath": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -693,3 +693,13 @@ D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Web\obj\Debug\net5.
 D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\ref\DhomeApp.Web.dll
 D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.pdb
 D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.genruntimeconfig.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.csprojAssemblyReference.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.AssemblyInfo.cs
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.dll
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\ref\DhomeApp.Web.dll
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Web\obj\Debug\net5.0\DhomeApp.Web.pdb

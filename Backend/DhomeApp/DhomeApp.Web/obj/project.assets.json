@@ -7329,11 +7329,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Web\\DhomeApp.Web.csproj",
+      "projectUniqueName": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Web\\DhomeApp.Web.csproj",
       "projectName": "DhomeApp.Web",
-      "projectPath": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Web\\DhomeApp.Web.csproj",
+      "projectPath": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Web\\DhomeApp.Web.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Web\\obj\\",
+      "outputPath": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7353,11 +7353,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj": {
-              "projectPath": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj"
+            "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj": {
+              "projectPath": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Data\\DhomeApp.Data.csproj"
             },
-            "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj": {
-              "projectPath": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj"
+            "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj": {
+              "projectPath": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\DhomeApp.Entity\\DhomeApp.Entity.csproj"
             }
           }
         }

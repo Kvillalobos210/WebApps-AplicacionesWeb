@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aMtwQ7X/+seueBSDZRDk3EhPtDBnHiO7J0C+kwHiwlFOv5DvhjA9OlDYuCDlB5cwcGn405bETzilwQdrrmBnEw==",
+  "dgSpecHash": "mZ1f3cTGmmbPhWHUJiZm90uAVfYMXvSWpYzqCy2dOuS47BoWjRjGmsleaMbXPq42lS6XXTChiy9ccxpMCuBciQ==",
   "success": true,
-  "projectFilePath": "D:\\Web App\\WebApps-AplicacionesWeb\\Backend\\DhomeApp\\CustomerTesting\\CustomerTesting.csproj",
+  "projectFilePath": "D:\\CICLO 5\\Aplicaciones Web\\TRABAJO FINAL\\DHomeAppBackend-Web\\DhomeApp\\DhomeApp\\CustomerTesting\\CustomerTesting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

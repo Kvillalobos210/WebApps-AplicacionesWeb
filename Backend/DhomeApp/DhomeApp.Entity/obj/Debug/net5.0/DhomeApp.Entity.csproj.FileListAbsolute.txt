@@ -58,3 +58,15 @@ D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\ne
 D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.dll
 D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\ref\DhomeApp.Entity.dll
 D:\Web App\WebApps-AplicacionesWeb\Backend\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.pdb
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\DhomeApp.Entity.deps.json
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\DhomeApp.Entity.dll
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\ref\DhomeApp.Entity.dll
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\bin\Debug\net5.0\DhomeApp.Entity.pdb
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.csprojAssemblyReference.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.AssemblyInfo.cs
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.dll
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\ref\DhomeApp.Entity.dll
+C:\Users\User\Downloads\DhomeApp-Gerardo\DhomeApp\DhomeApp.Entity\obj\Debug\net5.0\DhomeApp.Entity.pdb
